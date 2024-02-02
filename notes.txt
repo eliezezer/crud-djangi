@@ -1,0 +1,16 @@
+pip install virtualenv
+pip install django
+pip install dijangorestframework
+pip install django-cors
+
+
+https://pypi.org/project/django-cors-headers/
+pip install django-cors-headers ==========> para decir que se va conectar a nuestro backend
+
+para crear un superususario
+python .\manage.py createsuperuser
+
+
+
+##############################################Para el Front ##############################
+npm i react-router-dom react-hot-toast axios react-hook-form
