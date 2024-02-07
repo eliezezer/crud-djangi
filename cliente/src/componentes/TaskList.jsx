@@ -1,18 +1,22 @@
- import { useEffect } from "react";
+ import { useEffect, useState } from "react";
  import {getAllTask} from './../api/TakApi'
+ import { TaskCard } from "./TaskCard";
  export function TaskList() {
+    const[tasks,setTasks]=useState([]);
     useEffect(()=>{
        async function loadTask(){
             const res = await getAllTask()
-            console.log(res)
+            setTasks(res.data)
         }
         loadTask()
     },[])
     
     return (
-        <div>
-            Task List Api
-        </div>
+       <div>
+        {tasks.map(task=>(
+           <TaskCard key={task.id} task={task}/>
+        ))}
+       </div>
     );
 }
 
